@@ -874,7 +874,9 @@ set ttimeoutlen=10
 
 " Expand-region
 vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+vmap <C-v> <Plug>(expand_region_shrink) 
+
+nnoremap <S-j> :join<CR>$$
 
 
 
