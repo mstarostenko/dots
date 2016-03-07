@@ -61,9 +61,11 @@ NeoBundle 'Shougo/vimproc', {
 " Some support functions used by delimitmate, and snipmate
 NeoBundle 'vim-scripts/tlib'
 
-" --------------------------
-" ------- NERD TREE --------
-" -------------------------
+
+
+" ----------------------------------
+" ------- NERD TREE [installation]--
+" ----------------------------------
 " Great file system explorer, it appears when you open dir in vim
 " Allow modification of dir, and may other things
 
@@ -87,7 +89,7 @@ NeoBundle 'rking/ag.vim'
 " Поисковка silver-search для nerd-tree
 NeoBundle 'taiansu/nerdtree-ag'
 
-" NERDTree; BUNDLE SETTINGS
+" ------- NERD TREE [settings] -----
 
 " Tell NERDTree to display hidden files on startup
 let NERDTreeShowHidden=1
@@ -102,6 +104,7 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " ----------------------------
 " ----------------------------
 " ----------------------------
+
 
 
 " Improve bookmarks in vim
@@ -250,6 +253,10 @@ NeoBundle 'clausreinke/typescript-tools.vim'
 NeoBundle 'rust-lang/rust.vim'
 
 NeoBundle 'terryma/vim-expand-region'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+NeoBundle 'tpope/vim-speeddating'
 
 call neobundle#end()
 
@@ -411,12 +418,6 @@ inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 " disable preview in code complete
 set completeopt-=preview
 
-"-------------------------
-" Arpeggio
-
-" map jk to escape
-call arpeggio#map('i', '', 0, 'jk', '<ESC>')
-
 "--------------------------------------------------
 " Colorscheme
 
@@ -437,6 +438,9 @@ hi Directory        ctermfg=81
 highlight ColorColumn ctermbg=0
 " hi Folded ctermbg=8
 " highlight LineNr ctermfg=64 ctermbg=235
+
+hi IndentGuidesOdd ctermbg=0
+hi IndentGuidesEven ctermbg=24
 
 "--------------------------------------------------
 " General options
@@ -864,13 +868,14 @@ nmap <C-S-l> :tabmove +1<CR>
 
 " timeout for terminal sequences
 " Fix "airline mode indicator"'s delay
-" set ttimeoutlen=10
+set ttimeoutlen=10
 
 " nnoremap ,yf :let @"=expand("%:p")<CR>    " Mnemonic: Copy File path
 
-" vmap v <Plug>(expand_region_expand)
-" vmap <C-v> <Plug>(expand_region_shrink)
-"
+" Expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 
 
 
